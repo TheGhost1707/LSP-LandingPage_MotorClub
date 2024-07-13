@@ -1,0 +1,294 @@
+/* Global styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 200px;
+    height: 200vh;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.sidebar img{
+    margin: 0;
+    padding: 20px;
+    height: auto;
+    width: 130px;
+    border-radius: 100%;
+    border: 3px solid rgb(231, 180, 12);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 20;
+}
+
+.sidebar ul li {
+    margin: 30px 0;
+}
+.sidebar ul li:hover {
+    font-weight: bold;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: none;
+    color:rgb(231, 180, 12);
+}
+
+/* Main content styles */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    padding: 50px;
+    position: relative;
+}
+.header h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+    color: rgb(231, 180, 12);
+    border-radius: 5px;
+    padding: 20px;
+}
+.cover {
+    background-image: url('img/header-img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 100px;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.068); /* This adds the fade effect */
+}
+
+.cover h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+    color: rgb(231, 180, 12);
+    border: 5px solid rgb(214, 42, 42);
+    border-radius: 5px;
+    padding: 20px;
+}
+.cover a{
+    position: absolute;
+    top: 430px;
+}
+.cover button{
+    width: 110px;
+    height: 40px;
+    font-size: 15px;
+    background-color: rgb(58, 116, 58);
+    color: white;
+    border-radius: 5px;
+}
+.cover button:hover{
+    font-weight: bold;
+    background-color: green;
+    cursor: pointer;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #444;
+    padding: 20px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: none;
+    color:rgb(231, 180, 12);
+}
+
+/* Content styles */
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        transform: translateX(-250px);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .toggle-btn {
+        display: block;
+        background-color: #333;
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1001;
+    }
+
+    .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px; /* Adjust based on toggle button height */
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+    .header{
+        bottom: 40px;
+    }
+    .content {
+        padding: 15px;
+        bottom: 80px;
+    }
+    .content h1{
+        font-size: 20px;
+    }
+    .navbar ul li a {
+        font-size: 15px;
+    }
+}
+
+/* Toggle button styles */
+.toggle-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .toggle-btn {
+        display: block;
+        background-color: #333;
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+    }
+    .toggle-btn:hover{
+        font-weight: bold;
+    }
+}
+
+.main p{
+    color: rgb(231, 180, 12);
+    text-align: justify;
+    margin: 20px;
+}
+
+/* Content styles */
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+.product-form label {
+    margin: 10px 0 5px;
+    color: rgb(231, 180, 12);
+}
+
+.product-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.product-form button {
+    padding: 10px;
+    background-color: rgb(28, 119, 40);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-form button:hover {
+    background-color: #555;
+}
+
+.content h2{
+    color: rgb(231, 180, 12);
+    text-align: center;
+}
