@@ -74,13 +74,6 @@ body, html {
     border-radius: 5px;
     padding: 20px;
 }
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f0f0; /* Optional background color */
-}
 
 .main {
     text-align: center;
