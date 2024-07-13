@@ -3,6 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-color: black;
 }
 
 .container {
@@ -73,6 +74,18 @@ body, html {
     border-radius: 5px;
     padding: 20px;
 }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Optional background color */
+}
+
+.main {
+    text-align: center;
+}
+
 .cover {
     background-image: url('img/header-img.jpg');
     background-size: cover;
@@ -88,16 +101,6 @@ body, html {
     text-align: center;
 }
 
-.cover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.068); /* This adds the fade effect */
-}
-
 .cover h1 {
     font-size: 50px;
     text-align: center;
@@ -107,11 +110,13 @@ body, html {
     border-radius: 5px;
     padding: 20px;
 }
-.cover a{
+
+.cover a {
     position: absolute;
     top: 430px;
 }
-.cover button{
+
+.cover button {
     width: 110px;
     height: 40px;
     font-size: 15px;
@@ -119,10 +124,55 @@ body, html {
     color: white;
     border-radius: 5px;
 }
-.cover button:hover{
+
+.cover button:hover {
     font-weight: bold;
     background-color: green;
     cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cover {
+        padding: 0;
+    }
+
+    .cover h1 {
+        font-size: 35px;
+        padding: 15px;
+    }
+
+    .cover a {
+        top: 350px;
+    }
+
+    .cover button {
+        margin-top: 60px;
+        width: 100px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cover {
+        padding: 20px;
+    }
+
+    .cover h1 {
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .cover a {
+        top: 300px;
+    }
+
+    .cover button {
+        width: 90px;
+        height: 30px;
+        font-size: 13px;
+    }
 }
 
 /* Navbar styles */
